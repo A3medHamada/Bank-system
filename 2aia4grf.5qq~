@@ -1,0 +1,212 @@
+﻿#include<iostream>
+#include<string>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<iomanip>
+using namespace std;
+enum enlevelchoice { Easy = 1, Med = 2, Hard = 3, Mix = 4 };
+enum entypechoice { Add = 1, Sub = 2, Mul = 3, Div = 4, mix = 5 };
+struct stchoice {
+	int firstnum = 0;
+	int secounednum = 0;
+	enlevelchoice levelchoice;
+	entypechoice typechoice;
+	int rando = 0;
+	char operators;
+};
+
+int random(int from, int to) {
+	int randum = rand() % (to - from + 1) + from;
+	return randum;
+}
+short  howmanyquestion() {
+	short howmany;
+	cout << "How Many Question do you want to answer ?";
+	cin >> howmany;
+	while (cin.fail()) {
+		cin.clear();
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		cout << "Invalid Number,please enter number again: ";
+		cin >> howmany;
+	}
+	return howmany;
+}
+
+enlevelchoice chooselevel() {
+	short choice = 0;
+	do {
+		cout << "Enter Question Level [1] Easy, [2] Med, [3] Hard, [4] Mix ?";
+		cin >> choice;
+		while (cin.fail()) {
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Invalid Number,please enter number again: ";
+			cin >> choice;
+		}
+	} while (choice > 4 || choice < 1);
+	return (enlevelchoice)choice;
+}
+entypechoice typelevel() {
+	short typechoice = 0;
+	do {
+		cout << "Enter Question Type [1] Add, [2] Sub, [3] Mul, [4] Div, [5] Mix ?";
+		cin >> typechoice;
+		while (cin.fail()) {
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Invalid Number,please enter number again: ";
+			cin >> typechoice;
+		}
+	} while (typechoice > 5 || typechoice < 1);
+	return (entypechoice)typechoice;
+}
+entypechoice switchmix() {
+	if (entypechoice::mix) {
+		return (entypechoice)random(1, 4);
+	}
+}
+int chooserandom(enlevelchoice level) {
+	switch (level) {
+	case enlevelchoice::Easy:
+		return random(1, 10);
+		break;
+	case enlevelchoice::Hard:
+		return random(50, 100);
+		break;
+	case enlevelchoice::Med:
+		return random(20, 50);
+		break;
+	case enlevelchoice::Mix:
+		return random(1, 100);
+		break;
+	}
+}
+char chooseoper(entypechoice& typelevel) {
+	switch (typelevel)
+	{
+	case entypechoice::Add:
+		return '+';
+		break;
+	case entypechoice::Sub:
+		return '-';
+		break;
+	case entypechoice::Mul:
+		return '*';
+		break;
+	case entypechoice::Div:
+		return '/';
+		break;
+	default:
+		break;
+	}
+}
+void printqustion(stchoice& level) {
+	level.firstnum = chooserandom(level.levelchoice);
+	level.secounednum = chooserandom(level.levelchoice);
+	cout << to_string(level.firstnum) << endl << to_string(level.secounednum) << level.operators << "\n________" << endl;
+}
+int haha(stchoice& level) {
+	if (level.operators == '+')
+		return (level.firstnum + level.secounednum);
+	else if (level.operators == '-')
+		return (level.firstnum - level.secounednum);
+	else if (level.operators == '*')
+		return (level.firstnum * level.secounednum);
+	else if (level.operators == '/')
+		return (level.firstnum / level.secounednum);
+
+
+}
+short useranswer() {
+	short answer;
+	cin >> answer;
+	while (cin.fail()) {
+		cin.clear();
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		cout << "Invalid Number,please enter number again: ";
+		cin >> answer;
+	}
+	return  answer;
+}
+void reset() {
+	system("cls");
+	system("color 0f");
+}
+void answer(short ans, stchoice& level, int& win, int& ff) {
+	if (ans == haha(level)) {
+		cout << "\nRight Answer :-)";
+		system("color 2f");
+		cout << "\n";
+		win++;
+	}
+	else {
+		cout << "\nWrong Answer :-)\n" << "The right answer is: " << haha(level);
+		system("color 4f");
+		cout << "\a";
+		cout << "\n";
+		ff++;
+	}
+}
+void final() {
+	cout << "\n_________________________________\n\n";
+	cout << " Final Result Is PASS :-)\n";
+	cout << "___________________________________\n\n";
+}
+string levelname(enlevelchoice level) {
+	string arr[4] = { "Easy", "Med", "Hard","Mix" };
+	return arr[level - 1];
+}
+string typename2(entypechoice choice) {
+	string arr2[5] = { "Add" ,"Sub","Mul","Div","Mix" };
+	return arr2[choice - 1];
+
+}
+void result(short howmany, enlevelchoice level, entypechoice choice, int win, int fail) {
+	cout << setw(21) << "Number of Questions: " << howmany << endl;
+	cout << setw(21) << "Question Level     : " << levelname(level) << endl;
+	cout << setw(21) << "QsType             : " << typename2(choice) << endl;
+	cout <<setw(21)<< "Number of Right Answer: " << win << endl;
+	cout << setw(21) << "Number of Wrong Answer: " << fail << endl;
+	cout << "____________________________________________\n";
+
+}
+void solve() {
+	stchoice level;
+	int win = 0, fail = 0;
+	short howmany = howmanyquestion();
+	level.levelchoice = chooselevel();
+	level.typechoice = typelevel();
+	for (int i = 1; i <= howmany; i++) {
+		printf("Question %d/%d \n", i, howmany);
+		if (level.typechoice == entypechoice::mix) {
+			entypechoice x = switchmix();
+			level.operators = chooseoper(x);
+		}
+		else {
+			level.operators = chooseoper(level.typechoice);
+		}
+		printqustion(level);
+		int ans = useranswer();
+		answer(ans, level, win, fail);
+
+	}
+	final();
+	return result(howmany, level.levelchoice, level.typechoice, win, fail);
+}
+
+void startgame() {
+	char playagain = 'y';
+	do {
+		reset();
+		solve();
+		cout << "Do you want to play again? Y/N?";
+		cin >> playagain;
+	} while (playagain == 'y' || playagain == 'Y');
+
+}
+
+int main() {
+	srand((unsigned)time(NULL));
+	startgame();
+}

@@ -1,0 +1,29 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (AHMED HAMADA.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  AHMED HAMADA.cpp
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsString.h(38,24): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'AHMED%20HAMADA.cpp')
+  
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsString.h(60,24): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'AHMED%20HAMADA.cpp')
+  
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsString.h(144,24): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'AHMED%20HAMADA.cpp')
+  
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsBankClient.h(206,9): warning C4240: nonstandard extension used: access to 'clsBankClient::sttransferdata' now defined to be 'public', previously it was defined to be 'private'
+  (compiling source file 'AHMED%20HAMADA.cpp')
+  C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsBankClient.h(159,9):
+  see declaration of 'clsBankClient::sttransferdata'
+  
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsTatalBalance.h(42,65): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'AHMED%20HAMADA.cpp')
+  
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsTransferScreen.h(34,41): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'AHMED%20HAMADA.cpp')
+  
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsReadpremission.h(74,11): warning C4129: 'S': unrecognized character escape sequence
+  (compiling source file 'AHMED%20HAMADA.cpp')
+  
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsBankClient.h(341,1): warning C4715: 'clsBankClient::save': not all control paths return a value
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsUtil.h(197,1): warning C4715: 'clsUtil::NumberToText': not all control paths return a value
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsBankUser.h(249,1): warning C4715: 'clsBankUser::save': not all control paths return a value
+  AHMED HAMADA.vcxproj -> C:\Users\everest\source\repos\AHMED HAMADA\x64\Debug\Project.exe

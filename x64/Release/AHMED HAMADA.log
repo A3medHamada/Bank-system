@@ -1,0 +1,9 @@
+﻿  AHMED HAMADA.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\AHMED HAMADA.cpp(103): warning C4715: 'haha': not all control paths return a value
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\AHMED HAMADA.cpp(86): warning C4715: 'chooseoper': not all control paths return a value
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\AHMED HAMADA.cpp(67): warning C4715: 'chooserandom': not all control paths return a value
+  All 123 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  AHMED HAMADA.vcxproj -> C:\Users\everest\source\repos\AHMED HAMADA\x64\Release\AHMED HAMADA.exe

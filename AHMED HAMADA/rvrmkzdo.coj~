@@ -1,0 +1,71 @@
+﻿#pragma warning(disable: 4996)
+
+#include<ctime>
+#include<iostream>
+#include<iomanip>
+using namespace std;
+short readnum(string messege) {
+
+	cout << messege;
+	short num;  cin >> num;
+	return num;
+}
+bool checkleapornot(short year) {
+
+	if (((year % 400) == 0) || ((year % 100) != 0 && (year % 4) == 0)) {
+		return true;
+	}
+	return false;
+}
+short dayinmonth(short year, short month) {
+
+	if (month > 12 || month < 1) {
+		return 0;
+	}
+	short arrDay[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+
+	if (month == 2 && checkleapornot(year)) {
+		return 29;
+	}
+	else {
+		return arrDay[month - 1];
+	}
+
+
+}
+
+struct stDate {
+	short year;
+	short month;
+	short day;
+};
+bool checkcorrectdate(stDate date) {
+	return((date.month > 1 && date.month < 12) && (date.day > 1 && date.day < dayinmonth(date.year, date.month)));
+}
+stDate readdata1() {
+
+	stDate data1;
+
+	data1.year = readnum("please enter a year: ");
+	data1.month = readnum("please enter a month: ");
+	data1.day = readnum("please enter a day: ");
+	return data1;
+}
+void printresult() {
+	cout << "Enter Date: \n";
+	cout << "==========================\n";
+	stDate date1 = readdata1();
+
+	if (checkcorrectdate(date1)) {
+		cout << "\nYes, Date is valide date";
+	}
+	else {
+		cout << "\n no, Date is not valide date";
+	}
+
+}
+
+int main() {
+	printresult();
+
+}

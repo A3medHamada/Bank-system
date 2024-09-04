@@ -1,0 +1,12 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (AHMED HAMADA.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  AHMED HAMADA.cpp
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsString.h(38,24): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'AHMED%20HAMADA.cpp')
+  
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsString.h(60,24): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'AHMED%20HAMADA.cpp')
+  
+C:\Users\everest\source\repos\AHMED HAMADA\AHMED HAMADA\clsString.h(144,24): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'AHMED%20HAMADA.cpp')
+  
+  AHMED HAMADA.vcxproj -> C:\Users\everest\source\repos\AHMED HAMADA\x64\Debug\Project.exe
